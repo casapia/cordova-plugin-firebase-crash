@@ -4,12 +4,14 @@ buildscript {
     }
 
     dependencies {
+        // plugin crash with > 2.9.1 (current 2.9.5)
         String gradlePluginFirebaseCrashlyticsClassPath = "com.google.firebase:firebase-crashlytics-gradle:2.9.1"
         println "Adding classpath: ${gradlePluginFirebaseCrashlyticsClassPath}"
         classpath gradlePluginFirebaseCrashlyticsClassPath
     }
 }
 
+println "Adding com.google.firebase.crashlytics plugin"
 apply plugin: com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsPlugin
 
 android {
